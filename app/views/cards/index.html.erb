@@ -11,16 +11,14 @@ for rank in ranks
 end
 
 shuffled_deck = deck.shuffle #shuffles the deck
-#below we can then peel the top 5 cards off 
+hand = shuffled_deck = [0,5]
 
 %>
 
 <h1>Welcome to the Entr-451 Casino</h1>
 
-<ul>
-    <li><%= shuffled_deck[0] %></li>
-    <li><%= shuffled_deck[1] %></li>
-    <li><%= shuffled_deck[2] %></li>
-    <li><%= shuffled_deck[3] %></li>
-    <li><%= shuffled_deck[4] %></li>
-</ul> 
+<% for card in hand %>
+    <img src = "/images/cards/<%= card %>.svg">
+<% end %> 
+
+
