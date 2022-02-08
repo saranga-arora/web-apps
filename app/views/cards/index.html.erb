@@ -1,19 +1,26 @@
 <%
 ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
 suits = ["clubs", "diamonds", "hearts", "spades"]
+
+deck = [] #create empty deck
+
+for rank in ranks
+    for suit in suits
+    deck << "#{rank}_of_#{suit}" #this adds something to the deck
+    end
+end
+
+shuffled_deck = deck.shuffle #shuffles the deck
+#below we can then peel the top 5 cards off 
+
 %>
 
-<h1>Pick a card!</h1>
+<h1>Welcome to the Entr-451 Casino</h1>
 
-<% for suit in suits %>]
-    <% for rank in ranks %>
-    <p> 
-        <img src = "/images/cards/<%= rank %>_of_<%= suit %>.svg">
-    </p> 
-    <% end %>
-<% end %>
-
-
-<p>
-    <a href = "/cards">Pick Again!</a> 
-</p>
+<ul>
+    <li><%= shuffled_deck[0] %></li>
+    <li><%= shuffled_deck[1] %></li>
+    <li><%= shuffled_deck[2] %></li>
+    <li><%= shuffled_deck[3] %></li>
+    <li><%= shuffled_deck[4] %></li>
+</ul> 
